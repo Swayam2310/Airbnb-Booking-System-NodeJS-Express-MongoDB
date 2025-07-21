@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Stay</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    h1 {
+      color: #ff5a5f;
+      font-weight: 600;
+    }
+
+    #propertyName {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background-color: #ff5a5f;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff3b3f;
+    }
+
+    /* Form Styling */
+    form#bookingForm {
+      background-color: #f8f9fa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea {
+      background-color: #e9f1ff;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ff5a5f;
+      box-shadow: 0 0 8px rgba(255, 90, 95, 0.5);
+    }
+
+    .container {
+      max-width: 900px; /* Keep the form width broad */
+      padding: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    /* Section Title */
+    .form-section-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .container {
+        max-width: 100%;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Complete Your Booking For:</h1>
+    <h3 id="propertyName" class="text-center mb-4">Loading property...</h3>
+
+    <form id="bookingForm" class="row g-3">
+      <input type="hidden" id="listingId" value="">
+
+      <!-- Booking Details Section -->
+      <h3 class="form-section-title">Booking Details:</h3>
+      <div class="col-12">
+        <label for="startDate">Check-In</label>
+        <input type="date" id="startDate" class="form-control" required>
+      </div>
+      <div class="col-12">
+        <label for="endDate">Check-Out</label>
+        <input type="date" id="endDate" class="form-control" required>
+      </div>
+
+      <!-- Divider -->
+      <hr class="my-4">
+      
+      <h3 class="form-section-title">Your Details:</h3>
+      
+      <div class="col-12">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" class="form-control" placeholder="Please enter your name (mandatory)" required>
+      </div>
+      
+      <div class="col-12">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" class="form-control" placeholder="Please enter your email address (mandatory)" required>
+      </div>
+      
+      <div class="col-12">
+        <label for="daytimePhone">Daytime Phone Number</label>
+        <input type="text" id="daytimePhone" class="form-control" placeholder="Enter your daytime phone number">
+      </div>
+
+      <div class="col-12">
+        <label for="phone">Mobile Number</label>
+        <input type="text" id="phone" class="form-control" placeholder="Please enter your mobile number (mandatory)">
+      </div>
+      
+      <div class="col-12">
+        <label for="postalAddress">Postal Address</label>
+        <input type="text" id="postalAddress" class="form-control" placeholder="Please provide your postal address" required>
+      </div>
+
+      <div class="col-12">
+        <label for="homeAddress">Residential Address</label>
+        <input type="text" id="homeAddress" class="form-control" placeholder="Please provide your residential address" required>
+      </div>
+
+      <div class="col-12 text-center mt-4">
+        <button type="submit" class="btn btn-primary px-5">Book Now</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Include the external bookings.js script -->
+  <script src="bookings.js"></script>
+</body>
+</html>
