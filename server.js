@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 
 // MongoDB connection URI and client setup
-const uri = "mongodb+srv://swayampatel2310:S3994439@cluster0.ottja.mongodb.net/";
+const uri = "mongodb+srv://swayampatel2310:********@cluster0.ottja.mongodb.net/";
 const client = new MongoClient(uri);
 
 // Database reference
